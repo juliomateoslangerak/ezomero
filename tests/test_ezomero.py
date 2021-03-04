@@ -168,7 +168,7 @@ def test_post_roi(conn, project_structure, roi_fixture, users_groups):
 
     # Test posting to a non-existing image
     im_id2 = 999999999
-    with pytest.raises(Exception):  # TODO: verify which exception type
+    with pytest.raises(AttributeError):
         _ = ezomero.post_roi(conn, im_id2,
                              shapes=roi_fixture['shapes'],
                              name=roi_fixture['name'],
@@ -182,7 +182,7 @@ def test_post_roi(conn, project_structure, roi_fixture, users_groups):
     groupname = users_groups[0][1][0]  # test_group_2
     current_conn = conn.suConn(username, groupname)
     im_id4 = image_info[1][1]  # im1(in test_group_1)
-    with pytest.raises(Exception):  # TODO: verify which exception type
+    with pytest.raises(AttributeError):
         _ = ezomero.post_roi(current_conn, im_id4,
                              shapes=roi_fixture['shapes'],
                              name=roi_fixture['name'],
