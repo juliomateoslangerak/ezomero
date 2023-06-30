@@ -26,6 +26,7 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.pickle
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -130,3 +131,6 @@ dmypy.json
 
 # VS Code
 .vscode
+
+# For my sanity, I have a local script to run tests
+run_tests.sh
